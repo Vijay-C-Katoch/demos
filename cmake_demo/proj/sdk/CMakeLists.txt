@@ -3,7 +3,9 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../cmake/tools")
 project(XILINX_DEMO VERSION 0.0.1)
 
-set(CMAKE_CXX_STANDARD 14)
+# Set required standard level
+set (CMAKE_C_STANDARD 99)
+set (CMAKE_CXX_STANDARD 11)
 
 # Default to installing in build directory
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
@@ -11,20 +13,27 @@ if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     CACHE PATH "Default install path" FORCE)
 endif()
 
+MESSAGE(STATUS "CMAKE_SYSTEM_NAME is ${CMAKE_SYSTEM_NAME}")
+MESSAGE(STATUS "CMAKE_SYSTEM_PROCESSOR is ${CMAKE_SYSTEM_PROCESSOR}")
+
 # Generate version numbers
 configure_file (
   version.h.in
   ${XILINX_DEMO_BINARY_DIR}/src/version.h
   )
 
+# Cross compiling do not try to build test program with compiler
+set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+
 # Add platform-dependent targets early, so they can be configured by
 # platform
-add_library(ToDo "")
-add_executable(xilinx_cmake_demo "")
+add_library(xilinx_cmake_demo "")
+#add_executable(xilinx_cmake_demo "")
 
+message(STATUS "Now Building for: ${CMAKE_SYSTEM_NAME}")
 # Platform configuration
-include(${CMAKE_SYSTEM_NAME})
-message (STATUS "Building for ${CMAKE_SYSTEM_NAME}")
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/${CMAKE_SYSTEM_NAME}.cmake)
+message(STATUS "Platform Configuration done")
 
 # Define headers for this library. PUBLIC headers are used for
 # compiling the library, and will be added to consumers' build
