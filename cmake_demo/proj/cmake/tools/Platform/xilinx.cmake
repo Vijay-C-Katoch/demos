@@ -37,7 +37,7 @@ set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES ${INCLUDES})
 
 # Linker flags
 add_link_options(
-  -T ${XSDK}/src/lscript.ld
+  -T ${XSDK}/brd/lscript.ld
   -Wl,--gc-sections
   )
 

@@ -47,14 +47,13 @@ target_include_directories(xilinx_cmake_demo
   $<INSTALL_INTERFACE:include>
   PRIVATE
   ${XILINX_DEMO_BINARY_DIR}/src
-  src
   )
 
 message(STATUS "XILINX_DEMO_SOURCE_DIR Path: ${XILINX_DEMO_SOURCE_DIR}")
 message(STATUS "XILINX_DEMO_BINARY_DIR Path: ${XILINX_DEMO_BINARY_DIR}")
 
 # add directory to find sources
-add_subdirectory (src)
+add_subdirectory (src/app)
 
 # this module to search for compiler-provided system runtime libraries 
 # and add install rules for them  all library files listed in the variable 

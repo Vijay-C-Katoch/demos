@@ -6,8 +6,11 @@ target_compile_options(xilinx_cmake_demo
   -Wno-unused-parameter
   )
 
-# if (EXISTS ${XILINX_DEMO_SOURCE_DIR}/src/ports/rt-kernel/mb_${BSP}.c)
-  # set(BSP_SOURCE src/ports/rt-kernel/mb_${BSP}.c)
-# else()
-  # set(BSP_SOURCE src/ports/rt-kernel/mb_bsp.c)
-# endif()
+# BSP is generated in build directory
+# check if generated
+
+if (EXISTS ${XILINX_DEMO_BINARY_DIR}/src/${BSP}/Makefile)
+  set(BSP_HEADER_DIR ${XILINX_DEMO_BINARY_DIR}/src/${BSP}/)
+else()
+  message(STATUS "Error: Application BSP not found at ${XILINX_DEMO_BINARY_DIR}/src/${BSP}")
+endif()

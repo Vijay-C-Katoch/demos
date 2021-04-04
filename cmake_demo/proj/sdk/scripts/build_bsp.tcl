@@ -7,6 +7,9 @@ set work_space $::argv
 # set workspace
 sdk setws -switch $work_space
 
+# import projects from source directory to workspace in build 
+#importprojects ${sdk_dir}/src/app
+
 # clean the whole workspace
 #projects -clean
 
