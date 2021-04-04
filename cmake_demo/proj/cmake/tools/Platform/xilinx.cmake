@@ -30,7 +30,7 @@ add_definitions(
 
 # Common includes
 list (APPEND INCLUDES
-  ${XSDK}${BSP}/ps7_cortexa9_0/include
+  ${BSP_DIR}/ps7_cortexa9_0/include
   )
 set(CMAKE_C_STANDARD_INCLUDE_DIRECTORIES ${INCLUDES})
 set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES ${INCLUDES})
