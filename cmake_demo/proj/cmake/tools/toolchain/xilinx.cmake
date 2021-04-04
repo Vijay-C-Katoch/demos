@@ -24,7 +24,7 @@ Example to build for the demo_board board::
 #]=======================================================================]
 
 set(XSDK_INSTALL_PATH "$ENV{XILINX_SDK}" CACHE PATH   "Xilinx SDK installation path." FORCE)
-set(XSDK_XSCT "$ENV{XILINX_SDK}/xsct.bat" CACHE PATH   "Xilinx XSCT path."    FORCE)
+set(XSDK_XSCT "$ENV{XILINX_SDK}/bin/xsct.bat" CACHE PATH   "Xilinx XSCT path."    FORCE)
 
 include_guard()
 
