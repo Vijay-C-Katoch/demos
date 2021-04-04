@@ -12,8 +12,8 @@ set hdf_file $board_dir/katbot.hdf
 ## @brief Hardware project name
 set hardware_project_name katbot_hardware_platform
 
-## @brief Workspace directory
-set work_space $sdk_dir
+## @brief Workspace directory passed as argument to tcl script
+set work_space $::argv
 
 #-----------------------------------------------------------------------------
 # fsbl specification

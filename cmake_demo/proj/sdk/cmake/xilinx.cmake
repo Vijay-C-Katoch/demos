@@ -1,9 +1,3 @@
-target_sources(xilinx_cmake_demo
-  PRIVATE
-  src/helloworld.c
-  src/platform.c
-  )
-
 target_compile_options(xilinx_cmake_demo
   PRIVATE
   -Wall

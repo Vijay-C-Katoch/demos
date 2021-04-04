@@ -70,13 +70,14 @@ endif()
 # use Make from Xilinx
 set(CMAKE_MAKE_PROGRAM "${XSDK_INSTALL_PATH}/gnuwin/bin/make${EXTENSION}" CACHE PATH "" FORCE)
     
-# Create bsp and sdk workspace
-# execute_process(COMMAND ${XSDK_XSCT} ${XSDK}/scripts/create_sdk_workspace.tcl )
+# Create bsp and sdk workspace during configuration and pass build dir argument to tcl
+ execute_process(COMMAND ${XSDK_XSCT} ${XSDK}/scripts/create_sdk_workspace.tcl ${XILINX_DEMO_BINARY_DIR}/src)
 
-add_custom_target(
-  XilinxWorkspaceTarget ALL
-  COMMAND ${XSDK_XSCT} ${XSDK}/scripts/create_sdk_workspace.tcl
-)
+# Create bsp and sdk workspace during build and pass build dir argument to tcl
+# add_custom_target(
+  # XilinxWorkspaceTarget ALL
+  # COMMAND ${XSDK_XSCT} ${XSDK}/scripts/create_sdk_workspace.tcl
+# )
 
 # Check that bsp.mk exists
 # set(BSP_MK_FILE ${XSDK}/${BSP}/Makefile)

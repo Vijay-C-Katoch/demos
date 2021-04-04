@@ -42,13 +42,19 @@ message(STATUS "Platform Configuration done")
 # use things listed in install interface
 target_include_directories(xilinx_cmake_demo
   PUBLIC
-  $<BUILD_INTERFACE:${XILINX_DEMO_SOURCE_DIR}/include>
+  $<BUILD_INTERFACE:${XILINX_DEMO_SOURCE_DIR}>/src
   $<BUILD_INTERFACE:${XILINX_DEMO_BINARY_DIR}/include>
   $<INSTALL_INTERFACE:include>
   PRIVATE
   ${XILINX_DEMO_BINARY_DIR}/src
   src
   )
+
+message(STATUS "XILINX_DEMO_SOURCE_DIR Path: ${XILINX_DEMO_SOURCE_DIR}")
+message(STATUS "XILINX_DEMO_BINARY_DIR Path: ${XILINX_DEMO_BINARY_DIR}")
+
+# add directory to find sources
+add_subdirectory (src)
 
 # this module to search for compiler-provided system runtime libraries 
 # and add install rules for them  all library files listed in the variable 
