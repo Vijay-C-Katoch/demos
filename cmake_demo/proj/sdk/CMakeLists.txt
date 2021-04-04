@@ -27,8 +27,8 @@ set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
 # Add platform-dependent targets early, so they can be configured by
 # platform
-add_library(xilinx_cmake_demo "")
-#add_executable(xilinx_cmake_demo "")
+#add_library(xilinx_cmake_demo "")
+add_executable(xilinx_cmake_demo "")
 
 message(STATUS "Now Building for: ${CMAKE_SYSTEM_NAME}")
 # Platform configuration
