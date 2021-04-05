@@ -19,7 +19,7 @@ MESSAGE(STATUS "CMAKE_SYSTEM_PROCESSOR is ${CMAKE_SYSTEM_PROCESSOR}")
 # Generate version numbers
 configure_file (
   version.h.in
-  ${XILINX_DEMO_BINARY_DIR}/src/version.h
+  ${XILINX_DEMO_BINARY_DIR}/src/include/version.h
   )
 
 # Cross compiling do not try to build test program with compiler
@@ -40,18 +40,22 @@ message(STATUS "Platform Configuration done")
 # paths. BUILD_INTERFACE refer build tree and used for building 
 # project. INSTALL_INTERFACE refers install tree install(EXPORT)
 # use things listed in install interface
-# target_include_directories(xilinx_cmake_demo
-  # PUBLIC
-  # $<BUILD_INTERFACE:${XILINX_DEMO_SOURCE_DIR}>/src
-  # $<BUILD_INTERFACE:${XILINX_DEMO_BINARY_DIR}/include>
-  # $<INSTALL_INTERFACE:include>
-  # PRIVATE
-  # ${XILINX_DEMO_BINARY_DIR}/src
-  # src/app/src
-  # )
+target_include_directories(xilinx_cmake_demo
+  #PUBLIC
+  #$<BUILD_INTERFACE:${XILINX_DEMO_SOURCE_DIR}>/src
+  #$<BUILD_INTERFACE:${XILINX_DEMO_BINARY_DIR}/include>
+  #$<INSTALL_INTERFACE:include>
+  PRIVATE
+  ${XILINX_DEMO_BINARY_DIR}/src/include
+  )
 
 message(STATUS "XILINX_DEMO_SOURCE_DIR Path: ${XILINX_DEMO_SOURCE_DIR}")
 message(STATUS "XILINX_DEMO_BINARY_DIR Path: ${XILINX_DEMO_BINARY_DIR}")
+
+install (
+  TARGETS
+  xilinx_cmake_demo
+  DESTINATION bin)
 
 # add directory to find sources
 add_subdirectory (src/app)
