@@ -39,7 +39,6 @@ SECTIONS
 {
 .text : {
    KEEP (*(.vectors))
-   KEEP(*(.note.gnu.build-id))
    *(.boot)
    *(.text)
    *(.text.*)

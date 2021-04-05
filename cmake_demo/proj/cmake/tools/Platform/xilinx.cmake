@@ -21,9 +21,9 @@ set(CMAKE_C_OUTPUT_EXTENSION_REPLACE 1)
 set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
 set(CMAKE_ASM_OUTPUT_EXTENSION_REPLACE 1)
 
-# Add machine-specific flags
-add_definitions(${MACHINE})
-add_link_options(${MACHINE})
+# Add machine-specific flags for compiler and linker
+add_compile_options(${MACHINE_COMPILER}) 
+add_link_options(${MACHINE_LINKER})
 
 if (NOT ${VARIANT} STREQUAL "")
   add_definitions(-D${VARIANT})
@@ -40,12 +40,12 @@ else()
 endif()
 
 # Common flags
-add_definitions(
-  -ffunction-sections
-  -fomit-frame-pointer
-  -fno-strict-aliasing
-  -fshort-wchar
-  )
+# add_definitions(
+  # -ffunction-sections
+  # -fomit-frame-pointer
+  # -fno-strict-aliasing
+  # -fshort-wchar
+  # )
 
 message(STATUS "Platform Path: ${BSP_DIR}/ps7_cortexa9_0/include")  
 

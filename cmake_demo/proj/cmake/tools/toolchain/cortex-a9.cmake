@@ -1,9 +1,14 @@
 
-
-list(APPEND MACHINE
-  -mfpu=neon
+list(APPEND MACHINE_COMPILER
   -mcpu=cortex-a9
   -mfpu=vfpv3
   -mfloat-abi=hard
-  -Wl,-specs=${XSDK}/brd/Xilinx.spec
+  )
+
+list(APPEND MACHINE_LINKER
+  -mcpu=cortex-a9
+  -mfpu=vfpv3
+  -mfloat-abi=hard
+  -Wl,-build-id=none
+  -specs=${XSDK}/brd/Xilinx.spec
   )
