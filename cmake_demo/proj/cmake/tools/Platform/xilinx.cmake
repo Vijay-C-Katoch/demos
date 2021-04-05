@@ -22,8 +22,8 @@ set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
 set(CMAKE_ASM_OUTPUT_EXTENSION_REPLACE 1)
 
 # Add machine-specific flags for compiler and linker
-add_compile_options(${MACHINE_COMPILER}) 
-add_link_options(${MACHINE_LINKER})
+add_compile_options(${MACHINE}) 
+add_link_options(${MACHINE})
 
 if (NOT ${VARIANT} STREQUAL "")
   add_definitions(-D${VARIANT})
@@ -61,11 +61,12 @@ list (APPEND INCLUDES
 set(CMAKE_ASM_STANDARD_INCLUDE_DIRECTORIES ${INCLUDES})
 set(CMAKE_C_STANDARD_INCLUDE_DIRECTORIES ${INCLUDES})
 set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES ${INCLUDES})
-
+  
 # Linker flags
 add_link_options(
   -T ${XSDK}/brd/lscript.ld
-  -Wl,--gc-sections
+  -Wl,-build-id=none
+  -specs=${XSDK}/brd/Xilinx.spec
   )
 
 # Libraries
