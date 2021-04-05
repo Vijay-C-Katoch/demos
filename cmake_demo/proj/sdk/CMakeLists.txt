@@ -40,14 +40,15 @@ message(STATUS "Platform Configuration done")
 # paths. BUILD_INTERFACE refer build tree and used for building 
 # project. INSTALL_INTERFACE refers install tree install(EXPORT)
 # use things listed in install interface
-target_include_directories(xilinx_cmake_demo
-  PUBLIC
-  $<BUILD_INTERFACE:${XILINX_DEMO_SOURCE_DIR}>/src
-  $<BUILD_INTERFACE:${XILINX_DEMO_BINARY_DIR}/include>
-  $<INSTALL_INTERFACE:include>
-  PRIVATE
-  ${XILINX_DEMO_BINARY_DIR}/src
-  )
+# target_include_directories(xilinx_cmake_demo
+  # PUBLIC
+  # $<BUILD_INTERFACE:${XILINX_DEMO_SOURCE_DIR}>/src
+  # $<BUILD_INTERFACE:${XILINX_DEMO_BINARY_DIR}/include>
+  # $<INSTALL_INTERFACE:include>
+  # PRIVATE
+  # ${XILINX_DEMO_BINARY_DIR}/src
+  # src/app/src
+  # )
 
 message(STATUS "XILINX_DEMO_SOURCE_DIR Path: ${XILINX_DEMO_SOURCE_DIR}")
 message(STATUS "XILINX_DEMO_BINARY_DIR Path: ${XILINX_DEMO_BINARY_DIR}")
