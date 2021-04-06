@@ -3,24 +3,19 @@
 xilinx sdk toolchain
 -------------------
 
-The following environment variables must be set when cmake
+The following OS environment variables must be set when cmake
 configuration is invoked::
 
-  XSDK        - Location of xilinx sdk workspace
+  XILINX_SDK       - Location of xilinx sdk installation on host PC
   BSP         - Xilinx SDK proj bsp name
-
-The following environment variables are optional::
-
-  COMPILERS     - Compiler search path, defaults to Windows xilinx installation
 
 Your CMAKE_MODULE_PATH must also be configured so that
 Platform/xilinx.cmake can be found.
 
 Example to build for the demo_board board::
 
-  XSDK=/path/to/xilinx sdk workspace BSP=xilinx sdk proj bsp name cmake \
-     -B build.demo_board \
-     -DCMAKE_TOOLCHAIN_FILE=/path_to_this xilinx.cmake toolchain_file
+  cmake.exe -DCMAKE_TOOLCHAIN_FILE=..\cmake\tools\toolchain\xilinx.cmake \
+  -G "Eclipse CDT4 - Unix Makefiles" ..\sdk
 #]=======================================================================]
 
 set(XSDK_INSTALL_PATH "$ENV{XILINX_SDK}" CACHE PATH   "Xilinx SDK installation path." FORCE)
@@ -35,8 +30,8 @@ SET(CMAKE_SYSTEM_PROCESSOR arm)
 SET(CMAKE_SYSTEM_VERSION 1)
 
 # generate Makefile and Xilinx SDK projects
-set(CMAKE_GENERATOR       "Unix Makefiles" CACHE INTERNAL "" FORCE)
-set(CMAKE_EXTRA_GENERATOR "Eclipse CDT4"   CACHE INTERNAL "" FORCE)
+#set(CMAKE_GENERATOR       "Unix Makefiles" CACHE INTERNAL "" FORCE)
+#set(CMAKE_EXTRA_GENERATOR "Eclipse CDT4"   CACHE INTERNAL "" FORCE)
 set(CMAKE_ECLIPSE_VERSION 4.6.1 CACHE PATH "" FORCE)
 
 # Default toolchain search path
@@ -46,7 +41,7 @@ endif()
 
 # Default values
 if (NOT DEFINED ENV{XSDK})
-  set(ENV{XSDK} "C:/workspace/cmake_demo/proj/sdk")
+  set(ENV{XSDK} "${XILINX_DEMO_SOURCE_DIR}")
 endif()
 
 if (NOT DEFINED ENV{BSP})
