@@ -97,9 +97,11 @@ add_custom_target(
 # Set cross-compiler toolchain
 set(CMAKE_C_COMPILER ${COMPILERS}/arm-none-eabi-gcc)
 set(CMAKE_CXX_COMPILER ${COMPILERS}/arm-none-eabi-g++)
+set(CMAKE_ASM-ATT_COMPILER ${COMPILERS}/arm-none-eabi-as)
 if(CMAKE_HOST_WIN32)
   set(CMAKE_C_COMPILER ${CMAKE_C_COMPILER}.exe)
   set(CMAKE_CXX_COMPILER ${CMAKE_CXX_COMPILER}.exe)
+  set(CMAKE_ASM-ATT_COMPILER ${CMAKE_ASM-ATT_COMPILER}.exe)
 endif(CMAKE_HOST_WIN32)
 
 # Set cross-compiler machine-specific flags
