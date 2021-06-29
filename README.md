@@ -15,20 +15,8 @@ Prerequisites
                           XILINX_SDK=C:\Xilinx\SDK\2019.1
           
 
-Windows (Visual Studio)
------------------------
-
- * Start a Visual Studio "Developer command prompt" then:
-   * `cd demos\cmake_demo\proj\sdk`
-   * `mkdir build`
-   * `cd build`
-   * `cmake .. -G "NMake Makefiles"`
-   * `nmake`
-
-Linux & macOS
+Windows
 --------------
-   * `cd demos\cmake_demo\proj\sdk`
-   * `mkdir build`
-   * `cd build`
-   * `cmake ..`
-   * `make`
+   * run batchfile `run_cmake.bat` at `demos\cmake_demo\proj\sdk`
+   * Above batchfile has instructions to cross-compile xilinx target using cmake
+   * build artifacts generated at `demos\cmake_demo\proj`
