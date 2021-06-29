@@ -3,10 +3,10 @@
 xilinx sdk toolchain
 -------------------
 
-The following OS environment variables must be set when cmake
+The following OS environment variables must be assigned when cmake
 configuration is invoked::
 
-  XILINX_SDK       - Location of xilinx sdk installation on host PC
+  XILINX_SDK  - Location of xilinx sdk installation on host PC
   BSP         - Xilinx SDK proj bsp name
 
 Your CMAKE_MODULE_PATH must also be configured so that
