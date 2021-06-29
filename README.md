@@ -12,7 +12,7 @@ Prerequisites
  * The following OS environment variables must be assigned :
 
         * XILINX_SDK    - Location of xilinx sdk installation on host PC  e.g.  
-            * XILINX_SDK=C:\Xilinx\SDK\2019.1
+                          XILINX_SDK=C:\Xilinx\SDK\2019.1
           
 
 --------------
