@@ -1,5 +1,5 @@
 # demos
- demo projects for learning
+ cross compile Xilinx sdk project
 
 BUILDING
 ========
@@ -15,6 +15,17 @@ Prerequisites
                           XILINX_SDK=C:\Xilinx\SDK\2019.1
           
 
+Windows (Visual Studio)
+-----------------------
+
+ * Start a Visual Studio command prompt then:
+   * `cd demos\cmake_demo\proj\sdk`
+   * `mkdir build`
+   * `cd build`
+   * `cmake .. -G "NMake Makefiles"`
+   * `nmake`
+
+Linux & macOS
 --------------
    * `cd demos\cmake_demo\proj\sdk`
    * `mkdir build`
