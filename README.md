@@ -18,7 +18,7 @@ Prerequisites
 Windows (Visual Studio)
 -----------------------
 
- * Start a Visual Studio command prompt then:
+ * Start a Visual Studio "Developer command prompt" then:
    * `cd demos\cmake_demo\proj\sdk`
    * `mkdir build`
    * `cd build`
