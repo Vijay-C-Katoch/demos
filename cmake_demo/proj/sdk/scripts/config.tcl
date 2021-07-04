@@ -1,3 +1,21 @@
+## 
+# @file    config.tcl
+# @brief   Configure the workspace
+# @author  
+# @date    
+# @version 
+#
+# Configure the workspace by providing project name, hdf path and 
+# other data for Xilinx SDK
+
+#
+# <b>Modification history</b>
+# <pre>
+# Version Engineer  Date       Change details
+# ------- --------  ---------- -----------------------------------------------
+# </pre>
+##
+
 set script_file [ dict get [ info frame 0] file]
 set tcl_dir [file dirname $script_file]
 set sdk_dir $tcl_dir/..

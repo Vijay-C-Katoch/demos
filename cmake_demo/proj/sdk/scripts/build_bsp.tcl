@@ -1,3 +1,20 @@
+## 
+# @file    build_bsp.tcl
+# @brief   Script to build Xilinx BSP
+# @author  
+# @date    
+# @version 
+#
+# Script to build Xilinx SDK generated BSP based on hdf
+
+#
+# <b>Modification history</b>
+# <pre>
+# Version Engineer  Date       Change details
+# ------- --------  ---------- -----------------------------------------------
+# </pre>
+##
+
 # include config
 source [file join [file dirname [info script]] "config.tcl"]
 

@@ -1,3 +1,21 @@
+## 
+# @file    create_sdk_workspace.tcl
+# @brief   Generate or Create BSP for Xilinx SDK
+# @author  
+# @date    
+# @version 
+#
+# Script to Create BSP from hdf using xilinx toolchain for working with Xilinx
+# SDK
+
+#
+# <b>Modification history</b>
+# <pre>
+# Version Engineer  Date       Change details
+# ------- --------  ---------- -----------------------------------------------
+# </pre>
+##
+
 # include config
 source [file join [file dirname [info script]] "config.tcl"]
 
