@@ -74,6 +74,7 @@ add_custom_target(
   XilinxWorkspaceTarget ALL
   COMMAND ${XSDK_XSCT} ${XSDK}/scripts/create_sdk_workspace.tcl ${XILINX_DEMO_BINARY_DIR}/src
   COMMAND ${XSDK_XSCT} -eval source ${XSDK}/scripts/build_bsp.tcl ${XILINX_DEMO_BINARY_DIR}/src
+  COMMAND ${XSDK_XSCT} -eval source ${XSDK}/scripts/sdk_config.tcl ${XILINX_DEMO_BINARY_DIR}/src
 )
 
 # Check that bsp.mk exists

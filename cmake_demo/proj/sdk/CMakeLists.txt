@@ -59,7 +59,7 @@ install (
   xilinx_cmake_demo
   DESTINATION bin)
 
-# add directory to find sources
+# add directory to find sources in build tree
 add_subdirectory (src/app)
 
 # this module to search for compiler-provided system runtime libraries 
