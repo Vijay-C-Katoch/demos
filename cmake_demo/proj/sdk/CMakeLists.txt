@@ -37,6 +37,9 @@ message(STATUS "Now Building for: ${CMAKE_SYSTEM_NAME}")
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/${CMAKE_SYSTEM_NAME}.cmake)
 message(STATUS "Platform Configuration done")
 
+# Generate Xilinx BSP first
+add_dependencies(xilinx_cmake_demo XilinxWorkspaceTarget)
+
 # Define headers for this library. PUBLIC headers are used for
 # compiling the library, and will be added to consumers' build
 # paths. BUILD_INTERFACE refer build tree and used for building 
